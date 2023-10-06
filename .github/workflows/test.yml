@@ -1,0 +1,24 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main  
+
+jobs:
+  build:
+
+    runs-on: ubuntu-22.04.2 
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up JDK
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'  
+
+    - name: Build and test with Maven
+      working-directory: ./TEST_assignment-02  
+      run: mvn clean test 
