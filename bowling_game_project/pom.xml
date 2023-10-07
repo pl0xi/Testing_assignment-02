@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>TEST_assignment-02</artifactId>
+    <artifactId>bowling_game_project</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -17,15 +17,16 @@
     <dependencies>
         <dependency>
             <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-junit</artifactId>
+            <artifactId>cucumber-java</artifactId>
             <version>7.14.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-java</artifactId>
+            <artifactId>cucumber-junit</artifactId>
             <version>7.14.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
+
 </project>

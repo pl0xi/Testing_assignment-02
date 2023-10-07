@@ -1,4 +1,4 @@
-name: Test
+name: Tests
 
 on:
   push:
@@ -19,6 +19,11 @@ jobs:
       with:
         java-version: '11'  
 
-    - name: Build and test with Maven
-      working-directory: ./TEST_assignment-02  
+    - name: Test 2.1 string utility project
+      working-directory: ./string_utility_project  
       run: mvn clean test -q
+
+    - name: Test 2.2 bowling game project
+      working-directory: ./bowling_game_project  
+      run: mvn clean test -q
+
