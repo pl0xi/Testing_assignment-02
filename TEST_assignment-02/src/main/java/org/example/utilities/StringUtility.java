@@ -17,4 +17,12 @@ public class StringUtility {
         }
         return capitalizedString.toString();
     }
+
+    public static String lowercase(String text) {
+        StringBuilder lowercaseString = new StringBuilder();
+        for (int i = 0; i < text.length(); i++) {
+            lowercaseString.append(Character.toLowerCase(text.charAt(i)));
+        }
+        return lowercaseString.toString();
+    }
 }

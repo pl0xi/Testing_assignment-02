@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 public class StringUtilitySteps {
     String reversedString;
     String capitalizedString;
-
+    String lowercaseString;
     @Given("I want to reverse a text")
     public void i_want_to_reverse_a_text() {}
 
@@ -33,5 +33,18 @@ public class StringUtilitySteps {
     @Then("the text is capitalized and equals {string}")
     public void the_text_is_capitalized(String expectedText){
         assertEquals(expectedText, capitalizedString);
+    }
+
+    @Given("I want to lowercase a text")
+    public void i_want_to_lowercase_a_text() {}
+
+    @When("I lowercase {string} with the string utility")
+    public void i_lowercase_the_text_with_the_string_utility(String text) {
+        lowercaseString = StringUtility.lowercase(text);
+    }
+
+    @Then("the text is lowercase and equals {string}")
+    public void the_text_is_lowercase(String expectedText){
+        assertEquals(expectedText, lowercaseString);
     }
 }
