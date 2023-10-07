@@ -39,6 +39,28 @@ public class GameSteps {
         assertEquals(expectedPoints, g.score());
     }
 
+    @Given("I am new, but i was able to hit a spare")
+    public void i_am_new_but_i_was_able_to_hit_a_spare() { }
+
+    @When("I played {int} rounds where i hit {int} pins. Then i hit {int} spare and hit {int} pin in the next roll")
+    public void i_played_17_rounds_where_i_did_t_hit_any_pins_Then_i_hit_1_spare_and_hit_3_pin_in_the_next_roll(int zeroPinRounds, int zeroPin, int spares, int pinNextRoll) {
+        for(int i = 0; i < spares; i++) {
+            rollSpare();
+        }
+        g.roll(pinNextRoll);
+        rollMany(zeroPinRounds, zeroPin);
+    }
+
+    @Then("the score should be {int} because i hit 1 spare and 3 pin in the next roll")
+    public void the_score_should_be_16_because_i_hit_1_spare_and_3_pin_in_the_next_roll(int expectedScore) {
+        assertEquals(expectedScore, g.score());
+    }
+
+    private void rollSpare() {
+        g.roll(5);
+        g.roll(5);
+    }
+
     private void rollMany(int n, int pins) {
         for (int i = 0; i < n; i++)
             g.roll(pins);
