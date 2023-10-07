@@ -15,3 +15,8 @@ Feature: Bowling game system
     Given I am new, but i was able to hit a spare
     When I played 17 rounds where i hit 0 pins. Then i hit 1 spare and hit 3 pin in the next roll
     Then the score should be 16 because i hit 1 spare and 3 pin in the next roll
+
+  Scenario: The bowling player is average but he was able to hit a strike
+    Given I am able to hit a strike
+    When I hit 1 strike, then rolled 3 and 4 pins in the next 2 rolls. The last 16 rolls i hit 0 pins
+    Then the score should be 24 because i hit a strike and 3 and 4 pins in the next 2 rolls

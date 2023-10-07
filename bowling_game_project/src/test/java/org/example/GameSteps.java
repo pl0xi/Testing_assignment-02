@@ -56,6 +56,28 @@ public class GameSteps {
         assertEquals(expectedScore, g.score());
     }
 
+    @Given("I am able to hit a strike")
+    public void i_am_able_to_hit_a_strike() { }
+
+    @When("I hit {int} strike, then rolled {int} and {int} pins in the next 2 rolls. The last {int} rolls i hit {int} pins")
+    public void i_hit_strike_then_rolled_and_pins_in_the_next_2_rolls_The_last_rolls_i_hit_pins(int strikes, int firstRoll, int secondRoll, int zeroPinRounds, int zeroPin) {
+        for(int i = 0; i < strikes; i++) {
+            rollStrike();
+        }
+        g.roll(firstRoll);
+        g.roll(secondRoll);
+        rollMany(zeroPinRounds, zeroPin);
+    }
+
+    @Then("the score should be {int} because i hit a strike and 3 and 4 pins in the next 2 rolls")
+    public void the_score_should_be_24_because_i_hit_a_strike_and_3_and_4_pins_in_the_next_2_rolls(int expectedScore) {
+        assertEquals(expectedScore, g.score());
+    }
+
+    private void rollStrike() {
+        g.roll(10);
+    }
+
     private void rollSpare() {
         g.roll(5);
         g.roll(5);

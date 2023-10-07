@@ -29,10 +29,12 @@ Preventions:
     * AssertEquals tests: To insure the code does what the software developer intenteded the code should do.
     * You could also use BDD so that management would understand what the desired feature should do, according to the software developer, and therefore adjust it if it didn't match what management wanted. 
 
+## 2.1 STRING UTILITY
+Project is written in JAVA with maven. Located in "string_utility_project".
 
-## 2.1
+## 2.2 BOWLING GAME KATA
+Project is written in JAVA with maven. Located in "bowling_game_project".
 
-## 2.2
 ## 3.1
 * @Tag
     * 
