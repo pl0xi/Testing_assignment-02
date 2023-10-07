@@ -20,3 +20,8 @@ Feature: Bowling game system
     Given I am able to hit a strike
     When I hit 1 strike, then rolled 3 and 4 pins in the next 2 rolls. The last 16 rolls i hit 0 pins
     Then the score should be 24 because i hit a strike and 3 and 4 pins in the next 2 rolls
+
+  Scenario: The bowling player is world class and had a perfect game
+    Given I am able very good at bowling
+    When I hit 12 strikes in a row
+    Then the score should be 300 because i hit 12 strikes in a row

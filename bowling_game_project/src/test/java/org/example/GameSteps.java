@@ -74,6 +74,19 @@ public class GameSteps {
         assertEquals(expectedScore, g.score());
     }
 
+    @Given("I am able very good at bowling")
+    public void i_am_able_very_good_at_bowling() { }
+
+    @When("I hit {int} strikes in a row")
+    public void i_hit_strikes_in_a_row(int strikes) {
+        rollMany(strikes, 10);
+    }
+
+    @Then("the score should be {int} because i hit 12 strikes in a row")
+    public void the_score_should_be_300_because_i_hit_12_strikes_in_a_row(int expectedScore) {
+        assertEquals(expectedScore, g.score());
+    }
+
     private void rollStrike() {
         g.roll(10);
     }
