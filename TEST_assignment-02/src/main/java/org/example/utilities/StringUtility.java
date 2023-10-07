@@ -1,7 +1,5 @@
 package org.example.utilities;
 
-import jdk.jshell.spi.ExecutionControl;
-
 public class StringUtility {
     public static String reverse(String text)  {
         StringBuilder reversedString = new StringBuilder();
@@ -10,5 +8,13 @@ public class StringUtility {
         }
 
         return reversedString.toString();
+    }
+
+    public static String capitalize(String text) {
+        StringBuilder capitalizedString = new StringBuilder();
+        for (int i = 0; i < text.length(); i++) {
+            capitalizedString.append(Character.toUpperCase(text.charAt(i)));
+        }
+        return capitalizedString.toString();
     }
 }

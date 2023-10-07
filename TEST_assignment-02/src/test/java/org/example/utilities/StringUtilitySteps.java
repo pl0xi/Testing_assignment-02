@@ -5,8 +5,11 @@ import io.cucumber.java.en.When;
 
 import static org.junit.Assert.assertEquals;
 
+
 public class StringUtilitySteps {
     String reversedString;
+    String capitalizedString;
+
     @Given("I want to reverse a text")
     public void i_want_to_reverse_a_text() {}
 
@@ -22,5 +25,13 @@ public class StringUtilitySteps {
     @Given("I want to capitalize a text")
     public void i_want_to_capitalize_a_text() {}
 
+    @When("I capitalize {string} with the string utility")
+    public void i_capitalize_the_text_with_the_string_utility(String text) {
+        capitalizedString = StringUtility.capitalize(text);
+    }
 
+    @Then("the text is capitalized and equals {string}")
+    public void the_text_is_capitalized(String expectedText){
+        assertEquals(expectedText, capitalizedString);
+    }
 }
